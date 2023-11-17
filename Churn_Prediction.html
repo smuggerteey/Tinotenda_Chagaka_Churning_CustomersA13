@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction</title>
+</head>
+<body>
+    <h1>Churn Prediction</h1>
+    <p>Enter the following features to predict churn:</p>
+    <form method="POST" action="/predict">
+        <label for="tenure">Tenure:</label>
+        <input type="text" id="tenure" name="tenure" required><br>
+
+        <label for="onlineSecurity">Online Security:</label>
+        <input type="text" id="onlineSecurity" name="onlineSecurity" required><br>
+
+        <label for="deviceProtection">Device Protection:</label>
+        <input type="text" id="deviceProtection" name="deviceProtection" required><br>
+
+        <label for="techSupport">Tech Support:</label>
+        <input type="text" id="techSupport" name="techSupport" required><br>
+
+        <label for="streamingTV">Streaming TV:</label>
+        <input type="text" id="streamingTV" name="streamingTV" required><br>
+
+        <label for="streamingMovies">Streaming Movies:</label>
+        <input type="text" id="streamingMovies" name="streamingMovies" required><br>
+
+        <label for="contract">Contract:</label>
+        <input type="text" id="contract" name="contract" required><br>
+
+        <label for="paymentMethod">Payment Method:</label>
+        <input type="text" id="paymentMethod" name="paymentMethod" required><br>
+
+        <label for="monthlyCharges">Monthly Charges:</label>
+        <input type="text" id="monthlyCharges" name="monthlyCharges" required><br>
+
+        <label for="totalCharges">Total Charges:</label>
+        <input type="text" id="totalCharges" name="totalCharges" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
